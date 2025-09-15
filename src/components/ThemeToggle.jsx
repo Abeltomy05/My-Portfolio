@@ -29,6 +29,9 @@ export const ThemeToggle = () => {
   };
 
   return (
+    <>
+     {/* Desktop Theme Toggle (top-right corner) */}
+
     <button
       onClick={toggleTheme}
       className={cn(
@@ -42,5 +45,22 @@ export const ThemeToggle = () => {
         <Moon className="h-6 w-6 text-blue-900" />
       )}
     </button>
+
+     {/* Mobile Theme Toggle (bottom nav style) */}
+
+      <button
+        onClick={toggleTheme}
+        className={cn(
+          "sm:hidden fixed bottom-5 right-5 z-50 p-3 rounded-full shadow-md bg-background transition-colors duration-300",
+          "focus:outline-hidden"
+        )}
+      >
+        {isDarkMode ? (
+          <Sun className="h-6 w-6 text-yellow-300" />
+        ) : (
+          <Moon className="h-6 w-6 text-blue-900" />
+        )}
+      </button>
+    </>
   );
 };
