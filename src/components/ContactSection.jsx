@@ -1,16 +1,15 @@
 import {
-  Instagram,
+  InstagramIcon,
   Linkedin,
   Mail,
   MapPin,
   Phone,
   Send,
-  Twitch,
-  Twitter,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { useToast } from "@/hooks/use-toast";
 import { useState } from "react";
+import emailjs from "emailjs-com";
 
 export const ContactSection = () => {
   const { toast } = useToast();
@@ -18,16 +17,34 @@ export const ContactSection = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
     setIsSubmitting(true);
 
-    setTimeout(() => {
-      toast({
-        title: "Message sent!",
-        description: "Thank you for your message. I'll get back to you soon.",
-      });
-      setIsSubmitting(false);
-    }, 1500);
+    emailjs
+      .sendForm(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+        e.target,
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+      )
+      .then(
+        () => {
+          toast({
+            title: "Message sent!",
+            description: "Thank you for your message. I'll get back to you soon.",
+          });
+          setIsSubmitting(false);
+          e.target.reset();
+        },
+        (error) => {
+          toast({
+            title: "Error",
+            description: "Something went wrong. Please try again later.",
+            variant: "destructive",
+          });
+          console.error("EmailJS error:", error);
+          setIsSubmitting(false);
+        }
+      ); 
   };
   return (
     <section id="contact" className="py-24 px-4 relative bg-secondary/30">
@@ -100,7 +117,7 @@ export const ContactSection = () => {
                   <Twitter />
                 </a> */}
                 <a href="https://www.instagram.com/__4bel__/" target="_blank">
-                  <Instagram />
+                  <InstagramIcon />
                 </a>
               </div>
             </div>
