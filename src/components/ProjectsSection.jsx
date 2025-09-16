@@ -1,4 +1,4 @@
-import { ArrowRight, ExternalLink, Github } from "lucide-react";
+import { ArrowRight, ExternalLink, Github, Info } from "lucide-react";
 
 const projects = [
   {
@@ -9,6 +9,7 @@ const projects = [
     tags: ["React","TS", "Clean Architecture"],
     demoUrl: "https://bookmydesk.abeltomy.site/",
     githubUrl: "https://github.com/Abeltomy05/BookMyDesk-api",
+    message: ""
   },
   {
     id: 3,
@@ -19,6 +20,7 @@ const projects = [
     tags: ["React", "Node.js", "RazorPay"],
     demoUrl: "https://www.abeltomy.site/",
     githubUrl: "https://github.com/Abeltomy05/E-commerce-GreenMind-Backend",
+    message: "Currently backend not deployed."
   },
     {
     id: 2,
@@ -29,6 +31,7 @@ const projects = [
     tags: ["React", "Node.js", "MongoDB"],
     demoUrl: "https://chat-app-5j0m.onrender.com",
     githubUrl: "https://github.com/Abeltomy05/CHAT_APP",
+    message: "Free Render hosting may take 1 min to wake up."
   },
 ];
 
@@ -73,6 +76,7 @@ export const ProjectsSection = () => {
                 <p className="text-muted-foreground text-sm mb-4">
                   {project.description}
                 </p>
+
                 <div className="flex justify-between items-center">
                   <div className="flex space-x-3">
                     <a
@@ -91,6 +95,11 @@ export const ProjectsSection = () => {
                     </a>
                   </div>
                 </div>
+                {project.message &&(
+                  <div className="mt-4 p-3 text-sm rounded-md bg-muted text-muted-foreground border border-white shadow-[0_0_10px_rgba(255,255,255,0.7)]">
+                    {project.message}
+                  </div>
+                )}
               </div>
             </div>
           ))}
