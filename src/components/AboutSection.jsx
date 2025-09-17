@@ -18,7 +18,8 @@ export const AboutSection = () => {
                 
                 {/* Description */}
                 <div className="space-y-6">
-                  <h3 className="text-2xl font-semibold">
+                  <div className="space-y-6">
+                  <h3 className="text-2xl font-bold">
                     Passionate, Self Taught Web Developer 
                   </h3>
 
@@ -35,8 +36,9 @@ export const AboutSection = () => {
                     techniques to stay at the forefront of the ever-evolving web
                     landscape.
                   </p>
+                  </div>
 
-                  <div className="flex flex-col sm:flex-row gap-4 pt-4">
+                  <div className="flex flex-col sm:flex-row gap-4 pt-4 justify-center items-center">
                     <a href="#contact" className="cosmic-button">
                       Get In Touch
                     </a>
@@ -53,7 +55,7 @@ export const AboutSection = () => {
                 </div>
 
                 {/* Photo */}
-                <div className="flex justify-center">
+                <div className="flex flex-col items-center">
                   <div className="relative">
                     <div className="w-90 h-90 rounded-full gradient-border">
                       <div className="w-full h-full rounded-full bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center overflow-hidden">
@@ -79,18 +81,18 @@ export const AboutSection = () => {
                     <div className="absolute -top-4 -right-4 w-8 h-8 bg-primary rounded-full animate-bounce delay-100"></div>
                     <div className="absolute -bottom-6 -left-6 w-6 h-6 bg-secondary rounded-full animate-bounce delay-300"></div>
                     <div className="absolute top-1/2 -left-8 w-4 h-4 bg-primary/60 rounded-full animate-pulse"></div>
+                   </div>
 
-                     <div className="flex items-center gap-2 text-muted-foreground p-9">
-                        <span className="text-sm">Scroll right to see more</span>
+                     <div className="flex items-center gap-2 text-muted-foreground pt-5">
+                       <span className="text-sm">Scroll right to see more</span>
                         <div className="flex gap-1">
                           <div className="w-2 h-2 rounded-full bg-primary animate-pulse"></div>
                           <div className="w-2 h-2 rounded-full bg-primary/60 animate-pulse delay-100"></div>
                           <div className="w-2 h-2 rounded-full bg-primary/40 animate-pulse delay-200"></div>
                         </div>
-                    <span className="text-lg">→</span>
+                       <span className="text-lg">→</span>
+                     </div>
                   </div>
-                  </div>
-                </div>
               </div>
             </div>
 
