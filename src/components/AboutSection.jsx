@@ -8,12 +8,12 @@ export const AboutSection = () => {
           About <span className="text-primary">Me</span>
         </h2>
 
+       <div className="relative">
         {/* Horizontal Scroll Container */}
         <div className="overflow-x-auto overflow-y-hidden scrollbar-hide">
           <div className="flex gap-8 w-max min-h-[600px]">
-            
             {/* Panel 1: Description & Photo */}
-            <div className="flex-shrink-0 w-screen max-w-5xl px-4">
+            <div className="flex-shrink-0 w-screen max-w-5xl px-4 sm:ml-12">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center h-full">
                 
                 {/* Description */}
@@ -95,13 +95,9 @@ export const AboutSection = () => {
                   </div>
               </div>
             </div>
-
             {/* Panel 2: Skills */}
             <div className="flex-shrink-0 w-screen max-w-5xl px-4">
               <div className="h-full flex flex-col justify-center">
-                {/* <h3 className="text-3xl font-bold mb-8 text-center">
-                  My <span className="text-primary">Skills</span>
-                </h3> */}
                 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
                   <div className="gradient-border p-6 card-hover">
@@ -174,6 +170,13 @@ export const AboutSection = () => {
             </div>
           </div>
         </div>
+
+            {/* Right fade */}
+          <div className="pointer-events-none absolute top-0 right-0 h-full sm:w-26 bg-gradient-to-l from-background to-transparent"></div>
+
+            {/* Left fade */}
+           <div className="pointer-events-none absolute top-0 left-0 h-full sm:w-26 bg-gradient-to-r from-background to-transparent"></div>
+          </div> 
       </div>
 
       {/* Custom scrollbar styles */}
