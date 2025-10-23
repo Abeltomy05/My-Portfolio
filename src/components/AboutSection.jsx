@@ -61,7 +61,7 @@ export const AboutSection = () => {
                       <div className="w-full h-full rounded-full bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center overflow-hidden">
                        
                         <img 
-                          src="/Me1.jpg" 
+                          src="/Me2.jpg" 
                           alt="Abel Tomy" 
                           className="w-full ml-20 rounded-full object-cover object-center"
                           onError={(e) => {
